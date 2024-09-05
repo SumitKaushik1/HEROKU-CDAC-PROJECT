@@ -9,19 +9,61 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     
-    <dependencies>
-    <dependency>
-        <groupId>com.github.jsimone</groupId>
-        <artifactId>webapp-runner</artifactId>
-        <version>9.0.27.1</version>
-        <scope>provided</scope>
-    </dependency>
+<dependencies>
+ 
+  <dependency>
+    <groupId>com.github.jsimone</groupId>
+    <artifactId>webapp-runner</artifactId>
+    <version>9.0.27.1</version>
+</dependency>
+
 </dependencies>
+
 
 
 
     <build>
         <plugins>
+			 <!-- Other plugins -->
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.2.0</version>
+            <executions>
+                <execution>
+                    <id>add-source</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>add-source</goal>
+                    </goals>
+                    <configuration>
+                        <sources>
+                            <source>${project.build.directory}/dependency</source>
+                        </sources>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+			
+			
+			  <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>3.3.0</version>
+            <executions>
+                <execution>
+                    <id>copy-dependencies</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>copy-dependencies</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/dependency</outputDirectory>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+			
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
