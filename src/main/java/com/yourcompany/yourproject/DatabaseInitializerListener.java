@@ -4,6 +4,10 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+import dbutils.DBUtils;
+
+
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.Connection;
@@ -38,13 +42,16 @@ public class DatabaseInitializerListener implements ServletContextListener {
 
          
          
-         URI jdbUri = new URI(System.getenv("mysql://q4gj8bafulof74zc:n2ltxi0cusi30fhl@fojvtycq53b2f2kx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ld20zgpxb95sjt1g"));
-         String user = jdbUri.getUserInfo().split(":")[0];
-         String password = jdbUri.getUserInfo().split(":")[1];
-         String port = String.valueOf(jdbUri.getPort());
-         String jdbcUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
+			/*
+			 * URI jdbUri = new URI(System.getenv(
+			 * "mysql://q4gj8bafulof74zc:n2ltxi0cusi30fhl@fojvtycq53b2f2kx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ld20zgpxb95sjt1g"
+			 * )); String user = jdbUri.getUserInfo().split(":")[0]; String password =
+			 * jdbUri.getUserInfo().split(":")[1]; String port =
+			 * String.valueOf(jdbUri.getPort()); String jdbcUrl = "jdbc:mysql://" +
+			 * jdbUri.getHost() + ":" + port + jdbUri.getPath();
+			 */
 
-        try (Connection connection = DriverManager.getConnection(jdbcUrl, user, password);
+        try (Connection connection = DBUtils.getConnection();
              Statement stmt = connection.createStatement()) {
 
             // Check if the schema exists
