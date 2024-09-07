@@ -2,6 +2,7 @@ package daolayer;
 
 import static dbutils.DBUtils.getConnection;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +27,7 @@ public class DAOImple implements DAOIntf {
 	private Connection cn;
 
 
-	public DAOImple() throws SQLException {
+	public DAOImple() throws SQLException, URISyntaxException {
 		System.out.println("dao instance is made");
 		cn = getConnection();
 	

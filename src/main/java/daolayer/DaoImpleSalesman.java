@@ -2,6 +2,7 @@ package daolayer;
 
 import static dbutils.DBUtils.getConnection;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ public class DaoImpleSalesman implements DaoIntfSalesman {
 	private PreparedStatement p7,p8,p9,p10,p14,p16;
 	private Connection cn;
 	
-	public DaoImpleSalesman() throws SQLException {
+	public DaoImpleSalesman() throws SQLException, URISyntaxException {
 		System.out.println("dao instance is made");
 		cn = getConnection();
 		

@@ -2,6 +2,7 @@ package daolayer;
 
 import static dbutils.DBUtils.getConnection;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +17,7 @@ public class DaoImpleCusto implements DaoIntfCustomer {
 	private PreparedStatement p4,p5,p6,p15;
 	private Connection cn;
 	
-	public DaoImpleCusto() throws SQLException {
+	public DaoImpleCusto() throws SQLException, URISyntaxException {
 		
 	
 		cn = getConnection();
