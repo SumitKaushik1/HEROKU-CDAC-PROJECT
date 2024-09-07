@@ -1,5 +1,6 @@
 package bean;
 
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class SalesmanInfoBean {
 	 * java bean is generally to save the data from the browser page so state for
 	 * browser+bussinesslogic +doa layer connection
 	 */
-    public SalesmanInfoBean() throws SQLException {
+    public SalesmanInfoBean() throws SQLException, URISyntaxException {
 		super();
 		System.out.println("salesmaninfoBean started");
 		 daoImpleSalesman=new DaoImpleSalesman();

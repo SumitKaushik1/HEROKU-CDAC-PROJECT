@@ -1,5 +1,6 @@
 package bean;
 
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public class LoginBean {
 	
 	
 	
-	public LoginBean() throws SQLException {
+	public LoginBean() throws SQLException, URISyntaxException {
 	
 		super();
 		System.out.println("login bean started");

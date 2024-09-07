@@ -1,5 +1,6 @@
 package bean;
 
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -55,7 +56,7 @@ public class CustomerInfoBean {
 	}
 
 	
-	public CustomerInfoBean() throws SQLException {
+	public CustomerInfoBean() throws SQLException, URISyntaxException {
 		super();
 		System.out.println("customerinfobean started");
 		daoImpleCusto=new DaoImpleCusto();

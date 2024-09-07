@@ -1,6 +1,7 @@
 	package bean;
 	
-	import java.sql.SQLException;
+	import java.net.URISyntaxException;
+import java.sql.SQLException;
 import java.util.List;
 
 import daolayer.DAOImple;
@@ -27,7 +28,7 @@ import pojos.Products;
 	 
 	 
 	 
-	public ProductInfoBean() throws SQLException {
+	public ProductInfoBean() throws SQLException, URISyntaxException {
 		super();
 		System.out.println("product infobean started");
 		daoImpleProduct=new DaoImpleProduct();
