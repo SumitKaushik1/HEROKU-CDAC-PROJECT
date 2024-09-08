@@ -6,8 +6,9 @@
     <name>org_apache_jasper</name>
 </absolute-ordering>
   
-   
-   
+     <listener>
+        <listener-class>com.yourcompany.yourproject.DatabaseInitializerListener</listener-class>
+    </listener>
   
   <display-name>CRM</display-name>
   

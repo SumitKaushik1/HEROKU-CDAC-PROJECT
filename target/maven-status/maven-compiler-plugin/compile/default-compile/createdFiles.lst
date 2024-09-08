@@ -1,5 +1,6 @@
 daolayer\DaoIntfProduct.class
 bean\LoginBean.class
+com\yourcompany\yourproject\DatabaseInitializerListener.class
 daolayer\DaoIntfSalesman.class
 pojos\Users.class
 dbutils\DBUtils.class
